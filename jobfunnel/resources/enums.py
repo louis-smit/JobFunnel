@@ -8,17 +8,20 @@ class Locale(Enum):
     Locale must be set as it defines the code implementation to use for forming
     the correct GET requests, to allow us to interact with a job-source.
     """
+
     CANADA_ENGLISH = 1
     CANADA_FRENCH = 2
     USA_ENGLISH = 3
     UK_ENGLISH = 4
     FRANCE_FRENCH = 5
+    GERMANY_GERMAN = 6
 
 
 class JobStatus(Enum):
     """Job statuses that are built-into jobfunnel
     NOTE: these are the only valid values for entries in 'status' in our CSV
     """
+
     UNKNOWN = 1
     NEW = 2
     ARCHIVE = 3
@@ -34,8 +37,8 @@ class JobStatus(Enum):
 
 
 class JobField(Enum):
-    """Fields of job that we need setters for, passed to Scraper.get(field=...)
-    """
+    """Fields of job that we need setters for, passed to Scraper.get(field=...)"""
+
     TITLE = 0
     COMPANY = 1
     LOCATION = 2
@@ -56,8 +59,8 @@ class JobField(Enum):
 
 
 class Remoteness(Enum):
-    """What level of remoteness is a Job?
-    """
+    """What level of remoteness is a Job?"""
+
     UNKNOWN = 1  # NOTE: invalid state
     IN_PERSON = 2
     TEMPORARILY_REMOTE = 3  # AKA Cuz' COVID, realistically this is not remote!
@@ -70,22 +73,23 @@ class DuplicateType(Enum):
     """Ways in which a job can be a duplicate
     NOTE: we use these to determine what action(s) to take for a duplicate
     """
+
     KEY_ID = 0
     EXISTING_TFIDF = 1
     NEW_TFIDF = 2
 
 
 class Provider(Enum):
-    """Job source providers
-    """
+    """Job source providers"""
+
     INDEED = 1
     GLASSDOOR = 2
     MONSTER = 3
 
 
 class DelayAlgorithm(Enum):
-    """delaying algorithms
-    """
+    """delaying algorithms"""
+
     CONSTANT = 1
     SIGMOID = 2
     LINEAR = 3
